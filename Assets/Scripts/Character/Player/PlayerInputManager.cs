@@ -1,60 +1,63 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using World_Managers;
 
-public class PlayerInputManager : MonoBehaviour
+namespace DKC
 {
-    // 1. read player input
-    // move chatacter based on input
-    public static PlayerInputManager instance;
-    private PlayerControls playerControls;
-
-    [SerializeField] private Vector2 movement;
-
-    private void Awake()
+    public class PlayerInputManager : MonoBehaviour
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+        // 1. read player input
+        // move chatacter based on input
+        public static PlayerInputManager instance;
+        private PlayerControls playerControls;
 
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-        SceneManager.activeSceneChanged += OnSceneChange;
-        instance.enabled = false;
-    }
+        [SerializeField] private Vector2 movement;
 
-    private void OnSceneChange(Scene oldScene, Scene newScene)
-    {
-        if (newScene.buildIndex == WorldSaveGameManager.Instance.GetWorldSceneIndex())
+        private void Awake()
         {
-            instance.enabled = true;
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
-        else
+
+        private void Start()
         {
+            DontDestroyOnLoad(gameObject);
+            SceneManager.activeSceneChanged += OnSceneChange;
             instance.enabled = false;
         }
-    }
 
-    private void OnDestroy()
-    {
-        SceneManager.activeSceneChanged -= OnSceneChange;
-    }
-
-    private void OnEnable()
-    {
-        if (playerControls == null)
+        private void OnSceneChange(Scene oldScene, Scene newScene)
         {
-            playerControls = new PlayerControls();
-            playerControls.PlayerMovement.Movement.performed += i => movement = i.ReadValue<Vector2>();
-        } 
-        playerControls.Enable();
+            if (newScene.buildIndex == WorldSaveGameManager.Instance.GetWorldSceneIndex())
+            {
+                instance.enabled = true;
+            }
+            else
+            {
+                instance.enabled = false;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            SceneManager.activeSceneChanged -= OnSceneChange;
+        }
+
+        private void OnEnable()
+        {
+            if (playerControls == null)
+            {
+                playerControls = new PlayerControls();
+                playerControls.PlayerMovement.Movement.performed += i => movement = i.ReadValue<Vector2>();
+            }
+
+            playerControls.Enable();
+        }
     }
 }

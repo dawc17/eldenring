@@ -1,8 +1,7 @@
 using Unity.Netcode;
 using UnityEngine;
-using World_Managers;
 
-namespace Menu_Scene
+namespace DKC
 {
     public class TitleScrenManager : MonoBehaviour
     {

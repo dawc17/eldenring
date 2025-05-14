@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+namespace DKC
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class PlayerManager : CharacterManager
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        protected override void Awake()
+        {
+            base.Awake();
+        }
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace World_Managers
+namespace DKC
 {
     public class WorldSaveGameManager : MonoBehaviour
     {

@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class PlayerLocomotionManager : MonoBehaviour
+namespace DKC
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class PlayerLocomotionManager : MonoBehaviour
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
