@@ -11,7 +11,10 @@ namespace DKC
         public static PlayerInputManager instance;
         private PlayerControls playerControls;
 
-        [SerializeField] private Vector2 movement;
+        [SerializeField] Vector2 movement;
+        [SerializeField] float verticalInput;
+        [SerializeField] float horizontalInput;
+        [SerializeField] float moveAmount;
 
         private void Awake()
         {
@@ -58,6 +61,28 @@ namespace DKC
             }
 
             playerControls.Enable();
+        }
+
+        private void Update()
+        {
+            HandleMovementInput();
+        }
+
+        private void HandleMovementInput()
+        {
+            verticalInput = movement.y;
+            horizontalInput = movement.x;
+            
+            moveAmount = Mathf.Clamp01(Mathf.Abs(verticalInput) + Mathf.Abs(horizontalInput));
+
+            if (moveAmount <= 0.5 && moveAmount > 0)
+            {
+                moveAmount = 0.5f;
+            }
+            else if (moveAmount > 0.5 && moveAmount <= 1)
+            {
+                moveAmount = 1;
+            }
         }
     }
 }

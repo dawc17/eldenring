@@ -1191,7 +1191,8 @@ GameObject:
   - component: {fileID: 706975141142514622}
   - component: {fileID: 4084962865691790998}
   - component: {fileID: 6065890549194212878}
-  - component: {fileID: -6580551474843897635}
+  - component: {fileID: 4936353189956085138}
+  - component: {fileID: 749978187015579516}
   m_Layer: 0
   m_Name: Character_Male_NoFace_01
   m_TagString: Untagged
@@ -1268,7 +1269,7 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &-6580551474843897635
+--- !u!114 &4936353189956085138
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1277,7 +1278,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4270949834830946266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 745796da1592a4091b79dfa8c1bec847, type: 3}
+  m_Script: {fileID: 11500000, guid: c8f493d2557c278b6816b18d7929dd2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &749978187015579516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4270949834830946266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d16664d6db70f3be4be6fe388b0272c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4441425849037919691

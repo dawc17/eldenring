@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace DKC
@@ -7,6 +8,11 @@ namespace DKC
         protected virtual void Awake()
         {
             DontDestroyOnLoad(this); 
+        }
+
+        protected virtual void Update()
+        {
+            
         }
     }
 }
