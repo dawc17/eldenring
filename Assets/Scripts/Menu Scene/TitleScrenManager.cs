@@ -1,15 +1,19 @@
-using UnityEngine;
 using Unity.Netcode;
+using UnityEngine;
+using World_Managers;
 
-public class TitleScrenManager : MonoBehaviour
+namespace Menu_Scene
 {
-    public void StartNetworkAsHost()
+    public class TitleScrenManager : MonoBehaviour
     {
-        NetworkManager.Singleton.StartHost();
-    }
+        public void StartNetworkAsHost()
+        {
+            NetworkManager.Singleton.StartHost();
+        }
 
-    public void StartNewGame()
-    {
-        StartCoroutine(WorldSaveGameManager.Instance.LoadNewGame());
+        public void StartNewGame()
+        {
+            StartCoroutine(WorldSaveGameManager.Instance.LoadNewGame());
+        }
     }
 }

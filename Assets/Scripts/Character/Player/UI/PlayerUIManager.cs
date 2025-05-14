@@ -1,40 +1,42 @@
-using System;
 using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerUIManager : MonoBehaviour
+namespace Character.Player.UI
 {
-    public static PlayerUIManager instance;
-    [Header("Network Join")]
-    [SerializeField] bool startGameAsClient;
-
-    private void Awake()
+    public class PlayerUIManager : MonoBehaviour
     {
-        // Check if an instance of this class already exists
-        if (instance is null)
+        public static PlayerUIManager instance;
+        [Header("Network Join")]
+        [SerializeField] bool startGameAsClient;
+
+        private void Awake()
         {
-            instance = this;
+            // Check if an instance of this class already exists
+            if (instance is null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
-        else
+
+        private void Start()
         {
-            Destroy(gameObject);
+            DontDestroyOnLoad(gameObject); 
         }
-    }
 
-    private void Start()
-    {
-       DontDestroyOnLoad(gameObject); 
-    }
-
-    private void Update()
-    {
-        if (startGameAsClient)
+        private void Update()
         {
-            startGameAsClient = false;
-            // we must first shut down because we have a host
-            NetworkManager.Singleton.Shutdown();
-            // start network as client
-            NetworkManager.Singleton.StartClient();
-        } 
+            if (startGameAsClient)
+            {
+                startGameAsClient = false;
+                // we must first shut down because we have a host
+                NetworkManager.Singleton.Shutdown();
+                // start network as client
+                NetworkManager.Singleton.StartClient();
+            } 
+        }
     }
 }

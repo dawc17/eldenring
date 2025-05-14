@@ -1,10 +1,12 @@
-using System;
 using UnityEngine;
 
-public class CharacterManager : MonoBehaviour
+namespace Character
 {
-    private void Awake()
+    public class CharacterManager : MonoBehaviour
     {
-       DontDestroyOnLoad(this); 
+        private void Awake()
+        {
+            DontDestroyOnLoad(this); 
+        }
     }
 }
