@@ -9,12 +9,12 @@ namespace DKC
         // 1. read player input
         // move chatacter based on input
         public static PlayerInputManager instance;
-        private PlayerControls playerControls;
+        PlayerControls playerControls;
 
         [SerializeField] Vector2 movement;
-        [SerializeField] float verticalInput;
-        [SerializeField] float horizontalInput;
-        [SerializeField] float moveAmount;
+        public float verticalInput;
+        public float horizontalInput;
+        public float moveAmount;
 
         private void Awake()
         {
