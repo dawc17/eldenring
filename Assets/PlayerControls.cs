@@ -116,7 +116,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Keyboard"",
                     ""id"": ""1286b7f6-1d99-4612-8503-d2b2e6a3f70b"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=2)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -171,7 +171,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Gamepad"",
                     ""id"": ""5a1112ea-19ec-4738-af75-9c70a86f67ff"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=2)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

@@ -28,11 +28,11 @@ Transform:
   m_GameObject: {fileID: 279285155852370751}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4882363826462586695}
+  m_Father: {fileID: 8511216054129030615}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &3948744919998560328
 Camera:
@@ -137,6 +137,38 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &1106536863962880756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8511216054129030615}
+  m_Layer: 0
+  m_Name: Camera Pivot UpDown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8511216054129030615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106536863962880756}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6319066911114800798}
+  m_Father: {fileID: 4882363826462586695}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4846027600887025410
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +199,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6319066911114800798}
+  - {fileID: 8511216054129030615}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6231671676788279393
@@ -182,3 +214,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 390bae95e1e32e1a4bbe804d1918a5c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraObject: {fileID: 3948744919998560328}
+  player: {fileID: 0}

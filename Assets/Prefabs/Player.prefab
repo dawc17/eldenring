@@ -1192,10 +1192,11 @@ GameObject:
   - component: {fileID: 4084962865691790998}
   - component: {fileID: 6065890549194212878}
   - component: {fileID: 4936353189956085138}
+  - component: {fileID: 4389003144209799339}
   - component: {fileID: 749978187015579516}
   - component: {fileID: 7313277824728575683}
   m_Layer: 0
-  m_Name: Character_Male_NoFace_01
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1282,7 +1283,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f493d2557c278b6816b18d7929dd2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   characterController: {fileID: 0}
+--- !u!114 &4389003144209799339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4270949834830946266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aafd4328998a3a38abeaee76b6359050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  networkPosition:
+    m_InternalValue: {x: 0, y: 0, z: 0}
+  networkRotation:
+    m_InternalValue: {x: 0, y: 0, z: 0, w: 1}
+  networkPositionVelocity: {x: 0, y: 0, z: 0}
+  networkPositionSmoothTime: 0.1
+  networkRotationSmoothTime: 0.1
 --- !u!114 &749978187015579516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1295,12 +1317,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16664d6db70f3be4be6fe388b0272c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   characterController: {fileID: 0}
   verticalMovement: 0
   horizontalMovement: 0
   moveAmount: 1
   walkingSpeed: 2
   runningSpeed: 5
+  rotationSpeed: 15
 --- !u!143 &7313277824728575683
 CharacterController:
   m_ObjectHideFlags: 0

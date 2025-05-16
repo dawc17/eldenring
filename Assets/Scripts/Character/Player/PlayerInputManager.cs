@@ -51,6 +51,22 @@ namespace DKC
         {
             SceneManager.activeSceneChanged -= OnSceneChange;
         }
+        
+        // if window is minimized disable controls
+        private void OnApplicationFocus(bool hasFocus)
+        {
+            if (enabled)
+            {
+                if (hasFocus)
+                {
+                    playerControls.Enable();
+                }
+                else
+                {
+                    playerControls.Disable();
+                }
+            }
+        }
 
         private void OnEnable()
         {
