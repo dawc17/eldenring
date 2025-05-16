@@ -11,10 +11,16 @@ namespace DKC
         public static PlayerInputManager instance;
         PlayerControls playerControls;
 
+        [Header("Movement Input")]
         [SerializeField] Vector2 movement;
         public float verticalInput;
         public float horizontalInput;
         public float moveAmount;
+        
+        [Header("Camera Input")]
+        [SerializeField] Vector2 cameraInput;
+        public float cameraVerticalInput;
+        public float cameraHorizontalInput;
 
         private void Awake()
         {
@@ -74,6 +80,8 @@ namespace DKC
             {
                 playerControls = new PlayerControls();
                 playerControls.PlayerMovement.Movement.performed += i => movement = i.ReadValue<Vector2>();
+                playerControls.PlayerCamera.CameraControls.performed += i => cameraInput = i.ReadValue<Vector2>();
+
             }
 
             playerControls.Enable();
@@ -81,10 +89,11 @@ namespace DKC
 
         private void Update()
         {
-            HandleMovementInput();
+            HandlePlayerMovementInput();
+            HandleCameraMovementInput();
         }
 
-        private void HandleMovementInput()
+        private void HandlePlayerMovementInput()
         {
             verticalInput = movement.y;
             horizontalInput = movement.x;
@@ -99,6 +108,12 @@ namespace DKC
             {
                 moveAmount = 1;
             }
+        }
+
+        private void HandleCameraMovementInput()
+        {
+            cameraVerticalInput = cameraInput.y;
+            cameraHorizontalInput = cameraInput.x;
         }
     }
 }
